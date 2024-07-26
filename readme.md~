@@ -12,13 +12,13 @@ With this project I wanted to have two things:
 ### Docker
 
 ``` sh
-docker build --build-arg="VERSION=$(git describe --tags --abbrev=0)" -t RevProxy-LB.
+docker build --build-arg="VERSION=$(git describe --tags --abbrev=0)" -t rplb .
 ```
 
 ``` sh
-docker pull ghcr.io/charucjoshi/RevProxy-LB:latest
+docker pull ghcr.io/dalibormesaric/rplb:latest
 
-docker run -d --rm -p 8000:8000 -p 8080:8080 -e FE=localhost,myapp -e BE=myapp,http://192.168.1.1:80 --memory="64m" --memory-reservation="64m" --cpus="1" ghcr.io/charucjoshi/RevProxy-LB:latest
+docker run -d --rm -p 8000:8000 -p 8080:8080 -e FE=localhost,myapp -e BE=myapp,http://192.168.1.1:80 --memory="64m" --memory-reservation="64m" --cpus="1" ghcr.io/dalibormesaric/rplb:latest
 ```
 
 ### Reverse Proxy
